@@ -1,0 +1,40 @@
+@use "../syle.scss" as *;
+
+.collapse-conteneur {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 20px 30px 20px 30px;
+  margin-bottom: 40px;
+  background-color: $secondary-color;
+  .info-conteneur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    .info-numero-compte {
+      font-size: 1rem;
+    }
+    .info-argent {
+      font-weight: bold;
+      font-size: 2.3rem;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 0.85rem;
+      color: white;
+    }
+  }
+  .button-conteneur {
+    display: flex;
+    align-items: center;
+    .btn-history {
+      @include btn;
+      &:active {
+        box-shadow: -2px -2px 1px $tertiary-color;
+      }
+    }
+  }
+}

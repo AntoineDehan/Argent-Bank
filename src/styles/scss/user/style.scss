@@ -1,0 +1,30 @@
+@use "../syle.scss" as *;
+
+.user-conteneur {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .user-info-conteneur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    h1 {
+      text-align: center;
+    }
+    .btn-edit {
+      @include btn;
+      &:active {
+        box-shadow: -2px -2px 1px $tertiary-color;
+      }
+    }
+  }
+  .checkings-conteneur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+  }
+}

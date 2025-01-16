@@ -1,0 +1,36 @@
+.user-conteneur {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-conteneur .user-info-conteneur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.user-conteneur .user-info-conteneur h1 {
+  text-align: center;
+}
+.user-conteneur .user-info-conteneur .btn-edit {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0ab879;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 1px #085d3c;
+}
+.user-conteneur .user-info-conteneur .btn-edit:active {
+  box-shadow: -2px -2px 1px #085d3c;
+}
+.user-conteneur .checkings-conteneur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,46 @@
+.collapse-conteneur {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 20px 30px 20px 30px;
+  margin-bottom: 40px;
+  background-color: #3d3d3d;
+}
+.collapse-conteneur .info-conteneur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.collapse-conteneur .info-conteneur .info-numero-compte {
+  font-size: 1rem;
+}
+.collapse-conteneur .info-conteneur .info-argent {
+  font-weight: bold;
+  font-size: 2.3rem;
+}
+.collapse-conteneur .info-conteneur p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  color: white;
+}
+.collapse-conteneur .button-conteneur {
+  display: flex;
+  align-items: center;
+}
+.collapse-conteneur .button-conteneur .btn-history {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0ab879;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 1px #085d3c;
+}
+.collapse-conteneur .button-conteneur .btn-history:active {
+  box-shadow: -2px -2px 1px #085d3c;
+}
+
+/*# sourceMappingURL=style.css.map */
