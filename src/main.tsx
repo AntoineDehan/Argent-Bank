@@ -1,8 +1,14 @@
 import React from "react"
 import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
-import App from "./App"
 import { store } from "./app/store"
+
+import ReactDOM from "react-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+import Home from "./pages/Home"
+import Header from "./componants/Header"
+import Footer from "./componants/Footer"
 import "./index.css"
 
 const container = document.getElementById("root")
@@ -12,9 +18,13 @@ if (container) {
 
   root.render(
     <React.StrictMode>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </Router>
     </React.StrictMode>,
   )
 } else {
