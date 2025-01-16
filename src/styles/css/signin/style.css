@@ -1,0 +1,48 @@
+.signing-conteneur {
+  background-color: #12002b;
+  height: 400px;
+  width: 100%;
+}
+.signing-conteneur .form-conteneur {
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+.signing-conteneur .form-conteneur button {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0ab879;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 1px #085d3c;
+  margin-top: 5px;
+  width: 100%;
+}
+.signing-conteneur .form-conteneur .fa-circle-user {
+  font-size: 5rem;
+}
+.signing-conteneur .form-conteneur .input-remember {
+  display: flex;
+}
+.signing-conteneur .form-conteneur .input-remember label {
+  margin-left: 0.25rem;
+}
+.signing-conteneur .form-conteneur .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.signing-conteneur .form-conteneur .input-wrapper label {
+  font-weight: bold;
+}
+.signing-conteneur .form-conteneur .input-wrapper input {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
