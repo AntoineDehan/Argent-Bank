@@ -7,6 +7,8 @@ import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import Home from "./pages/Home"
+import ErrorPage from "./componants/Error"
+
 import Header from "./componants/Header"
 import Footer from "./componants/Footer"
 import "./index.css"
@@ -22,6 +24,7 @@ if (container) {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,0 +1,20 @@
+.error-conteneur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.error-conteneur h1 {
+  font-size: 8rem;
+  color: #0ab879;
+}
+.error-conteneur p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.error-conteneur a {
+  color: #0ab879;
+}
+
+/*# sourceMappingURL=style.css.map */

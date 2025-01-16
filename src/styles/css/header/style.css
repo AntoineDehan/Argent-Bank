@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  border-bottom: 5px solid red;
   padding: 5px 10px 5px 10px;
 }
 .header-conteneur .logo-conteneur {
@@ -18,7 +17,7 @@
   align-items: center;
 }
 .header-conteneur nav a {
-  color: black;
+  color: #3d3d3d;
   font-weight: bold;
   text-decoration: none;
 }
