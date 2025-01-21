@@ -1,13 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 interface SignedState {
-  value: boolean
+  token: string | null
   status: "idle" | "pending" | "fullfilled" | "failed"
   error: string | null
 }
 
 const initialState: SignedState = {
-  value: false,
+  token: null,
   status: "idle",
   error: null,
 }
@@ -31,7 +31,8 @@ export const connexionAsync = createAsyncThunk(
         throw new Error(errorData.message || "Login failed")
       }
       const data = await response.json()
-      return data
+      console.log("API Response:", data)
+      return data.body.token
     } catch (err: any) {
       return rejectWithValue(err.message)
     }
@@ -42,11 +43,9 @@ const SignedSlice = createSlice({
   name: "signed",
   initialState,
   reducers: {
-    signed_in: state => {
-      state.value = true
-    },
+    signed_in: state => {},
     signed_out: state => {
-      state.value = false
+      state.token = null
       state.status = "idle"
       state.error = null
     },
@@ -57,12 +56,16 @@ const SignedSlice = createSlice({
         state.status = "pending"
         state.error = null
       })
-      .addCase(connexionAsync.fulfilled, state => {
-        state.value = true
-        state.status = "fullfilled"
-      })
+      .addCase(
+        connexionAsync.fulfilled,
+        (state, action: PayloadAction<string>) => {
+          state.token = action.payload
+          state.status = "fullfilled"
+        },
+      )
       .addCase(connexionAsync.rejected, (state, action) => {
         state.status = "failed"
+        state.token = null
         state.error = action.payload as string
       })
   },

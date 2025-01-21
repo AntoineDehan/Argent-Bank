@@ -6,11 +6,15 @@ import { useDispatch, useSelector, UseSelector } from "react-redux"
 
 import "../../styles/css/header/style.css"
 import { RootState } from "../../state/store"
+import { signed_out } from "../../state/signed/SignedSlice"
 
 function Header() {
-  const signedin = useSelector((state: RootState) => state.signed.value)
+  const signedin = useSelector((state: RootState) => state.signed.token)
   const dispatch = useDispatch()
 
+  const logout = () => {
+    dispatch(signed_out())
+  }
   return (
     <div className="header-conteneur">
       <div className="logo-conteneur">
@@ -21,10 +25,13 @@ function Header() {
       <nav>
         <div className={"sign-in-conteneur"}>
           {signedin ? (
-            <Link to="/user" className="header-dashboard">
-              <FontAwesomeIcon icon={faCircleUser} />
-              Dashboard
-            </Link>
+            <div>
+              <Link to="/user" className="header-dashboard">
+                <FontAwesomeIcon icon={faCircleUser} />
+                Dashboard
+              </Link>
+              <button onClick={logout}>Déconnection</button>
+            </div>
           ) : (
             <Link to="/sign-in" className="header-sign-in">
               <FontAwesomeIcon icon={faCircleUser} />

@@ -1,14 +1,29 @@
 import Collapse from "../../componants/Collapse"
+import { useSelector } from "react-redux"
+import { RootState } from "../../state/store"
+import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
 import "../../styles/css/user/style.css"
 
-function User() {
+const User: React.FC = () => {
+  const token = useSelector((state: RootState) => state.signed.token)
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (token === null) {
+      navigate("/sign-in")
+    }
+  }, [token, navigate])
+
+  if (token === null) {
+    return <div>Loading...</div>
+  }
   return (
     <div className="user-conteneur">
       <div className="user-info-conteneur">
         <h1>
           Welcome back <br />
-          $USER!
+          {token}
         </h1>
         <button className="btn-edit">Edit Name</button>
       </div>

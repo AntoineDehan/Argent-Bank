@@ -4,19 +4,35 @@ import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch, useSelector } from "react-redux"
 import { connexionAsync } from "../../state/signed/SignedSlice"
 import { AppDispatch, RootState } from "../../state/store"
+import { useNavigate } from "react-router-dom"
 
 import "../../styles/css/signin/style.css"
 
 const Signing: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { status, error } = useSelector((state: RootState) => state.signed)
+  const { token, error } = useSelector((state: RootState) => state.signed)
+
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    await dispatch(connexionAsync({ email, password }))
+    try {
+      const resultAction = await dispatch(connexionAsync({ email, password }))
+
+      if (connexionAsync.fulfilled.match(resultAction)) {
+        console.log("Login successful!")
+        console.log("Token:", token)
+        navigate("/user")
+        // window.location.href = "./user"
+      } else {
+        console.error("Login failed:", resultAction.payload)
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err)
+    }
   }
 
   return (
