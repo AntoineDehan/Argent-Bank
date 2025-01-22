@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch, useSelector } from "react-redux"
 import { connexionAsync } from "../../state/signed/SignedSlice"
+import { infoAsync } from "../../state/signed/SignedSlice"
 import { AppDispatch, RootState } from "../../state/store"
 import { useNavigate } from "react-router-dom"
 
@@ -24,7 +25,8 @@ const Signing: React.FC = () => {
 
       if (connexionAsync.fulfilled.match(resultAction)) {
         console.log("Login successful!")
-        console.log("Token:", token)
+        console.log("Dispatching infoAsync...")
+        dispatch(infoAsync())
         navigate("/user")
         // window.location.href = "./user"
       } else {
