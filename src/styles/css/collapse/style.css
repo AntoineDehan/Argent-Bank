@@ -43,4 +43,20 @@
   box-shadow: -2px -2px 1px #085d3c;
 }
 
+@media (max-width: 1024px) {
+  .collapse-conteneur {
+    flex-direction: column;
+    height: 150px;
+  }
+  .collapse-conteneur .info-conteneur {
+    justify-content: start;
+  }
+  .collapse-conteneur .button-conteneur {
+    width: 100%;
+  }
+  .collapse-conteneur .button-conteneur .btn-history {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

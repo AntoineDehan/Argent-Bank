@@ -38,3 +38,19 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .collapse-conteneur {
+    flex-direction: column;
+    height: 150px;
+    .info-conteneur {
+      justify-content: start;
+    }
+    .button-conteneur {
+      width: 100%;
+      .btn-history {
+        width: 100%;
+      }
+    }
+  }
+}
