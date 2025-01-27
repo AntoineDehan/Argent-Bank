@@ -16,10 +16,22 @@
     height: 100%;
     display: flex;
     align-items: center;
+    .sign-in-conteneur {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      background: none;
+      border: none;
+      font-size: 1.15rem;
+      margin-left: 8px;
+    }
     a {
       color: $secondary-color;
       font-weight: bold;
       text-decoration: none;
+      font-size: 1.15rem;
       .fa-circle-user {
         margin-right: 5px;
       }

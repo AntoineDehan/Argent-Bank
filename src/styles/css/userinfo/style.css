@@ -1,0 +1,53 @@
+.user-info-conteneur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.user-info-conteneur .user-info-form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  gap: 10px;
+}
+.user-info-conteneur .user-info-form .field {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.user-info-conteneur .user-info-form .field input {
+  border: rgb(165, 164, 164) solid 1px;
+  border-radius: 5px;
+  height: 15px;
+  padding: 5px;
+}
+.user-info-conteneur .user-info-form .inactive input {
+  background-color: lightgray;
+  color: gray;
+}
+.user-info-conteneur .user-info-form .inactive input:hover {
+  cursor: default;
+}
+.user-info-conteneur .user-info-form .button-form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.user-info-conteneur button {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0ab879;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 1px #085d3c;
+  font-size: 0.85rem;
+  padding: 13px 25px 13px 25px;
+  border-radius: 5px;
+}
+.user-info-conteneur button:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

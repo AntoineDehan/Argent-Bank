@@ -28,7 +28,6 @@ const Signing: React.FC = () => {
         console.log("Dispatching infoAsync...")
         dispatch(infoAsync())
         navigate("/user")
-        // window.location.href = "./user"
       } else {
         console.error("Login failed:", resultAction.payload)
       }
@@ -40,8 +39,10 @@ const Signing: React.FC = () => {
   return (
     <div className="signing-conteneur">
       <section className="form-conteneur">
-        <FontAwesomeIcon icon={faCircleUser} />
-        <h1>Sign In</h1>
+        <div className="top-form">
+          <FontAwesomeIcon icon={faCircleUser} />
+          <h1>Sign In</h1>
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="input-wrapper">
             <label htmlFor="username">Username </label>

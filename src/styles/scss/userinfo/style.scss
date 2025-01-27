@@ -1,0 +1,47 @@
+@use "../syle.scss" as *;
+
+.user-info-conteneur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  .user-info-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    gap: 10px;
+    .field {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      input {
+        border: rgb(165, 164, 164) solid 1px;
+        border-radius: 5px;
+        height: 15px;
+        padding: 5px;
+      }
+    }
+    .inactive input {
+      background-color: lightgray;
+      color: gray;
+      &:hover {
+        cursor: default;
+      }
+    }
+    .button-form {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  button {
+    @include btn;
+    font-size: 0.85rem;
+    padding: 13px 25px 13px 25px;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

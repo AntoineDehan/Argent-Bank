@@ -16,10 +16,22 @@
   display: flex;
   align-items: center;
 }
+.header-conteneur nav .sign-in-conteneur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-conteneur nav button {
+  background: none;
+  border: none;
+  font-size: 1.15rem;
+  margin-left: 8px;
+}
 .header-conteneur nav a {
   color: #3d3d3d;
   font-weight: bold;
   text-decoration: none;
+  font-size: 1.15rem;
 }
 .header-conteneur nav a .fa-circle-user {
   margin-right: 5px;

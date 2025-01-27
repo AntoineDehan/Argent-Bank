@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons"
 import logo from "../../assets/images/argentBankLogo.webp"
 import { useDispatch, useSelector, UseSelector } from "react-redux"
 
@@ -25,12 +26,14 @@ function Header() {
       <nav>
         <div className={"sign-in-conteneur"}>
           {signedin ? (
-            <div>
+            <div className="tesst">
               <Link to="/user" className="header-dashboard">
                 <FontAwesomeIcon icon={faCircleUser} />
                 Dashboard
               </Link>
-              <button onClick={logout}>Déconnection</button>
+              <button onClick={logout}>
+                <FontAwesomeIcon icon={faPowerOff} />
+              </button>
             </div>
           ) : (
             <Link to="/sign-in" className="header-sign-in">
