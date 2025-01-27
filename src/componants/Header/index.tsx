@@ -11,6 +11,7 @@ import { signed_out } from "../../state/signed/SignedSlice"
 
 function Header() {
   const signedin = useSelector((state: RootState) => state.signed.token)
+  const name = useSelector((state: RootState) => state.signed.username)
   const dispatch = useDispatch()
 
   const logout = () => {
@@ -26,10 +27,10 @@ function Header() {
       <nav>
         <div className={"sign-in-conteneur"}>
           {signedin ? (
-            <div className="tesst">
+            <div>
               <Link to="/user" className="header-dashboard">
                 <FontAwesomeIcon icon={faCircleUser} />
-                Dashboard
+                {name}'s dashboard
               </Link>
               <button onClick={logout}>
                 <FontAwesomeIcon icon={faPowerOff} />

@@ -27,6 +27,9 @@
   font-size: 1.15rem;
   margin-left: 8px;
 }
+.header-conteneur nav button:hover {
+  cursor: pointer;
+}
 .header-conteneur nav a {
   color: #3d3d3d;
   font-weight: bold;
@@ -35,6 +38,7 @@
 }
 .header-conteneur nav a .fa-circle-user {
   margin-right: 5px;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

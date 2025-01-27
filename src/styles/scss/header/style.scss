@@ -26,6 +26,9 @@
       border: none;
       font-size: 1.15rem;
       margin-left: 8px;
+      &:hover {
+        cursor: pointer;
+      }
     }
     a {
       color: $secondary-color;
@@ -34,6 +37,7 @@
       font-size: 1.15rem;
       .fa-circle-user {
         margin-right: 5px;
+        font-size: 1rem;
       }
     }
   }
