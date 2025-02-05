@@ -162,11 +162,14 @@ const SignedSlice = createSlice({
         },
       )
       .addCase(infoAsync.rejected, (state, action) => {
-        console.log("InfoAsync rejecté", action.error.message)
+        console.log("InfoAsync rejected", action.error.message)
       })
       .addCase(editAsync.fulfilled, (state, action: PayloadAction<string>) => {
         console.log("New User Name:", action.payload)
         state.username = action.payload
+      })
+      .addCase(editAsync.rejected, (state, action) => {
+        console.log("EditAsync rejected", action.error.message)
       })
   },
 })

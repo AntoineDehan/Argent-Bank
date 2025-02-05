@@ -28,7 +28,6 @@ const UserInfo: React.FC = () => {
     }
 
     try {
-      console.log({ username: newUsername })
       const resultAction = await dispatch(editAsync({ userName: newUsername }))
 
       if (editAsync.fulfilled.match(resultAction)) {
