@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState, AppDispatch } from "../../state/store"
 import { editAsync } from "../../state/signed/SignedSlice"
@@ -40,6 +40,13 @@ const UserInfo: React.FC = () => {
       console.error("Error updating username:", error)
     }
   }
+
+  //En cas qu'username soit un peu trop lent a charger
+  useEffect(() => {
+    if (username) {
+      setNewUsername(username)
+    }
+  }, [username])
 
   return (
     <div className="user-info-componant">
