@@ -121,7 +121,7 @@ paths:
         '500':
           description: Internal Server Error
   /transactions/{transactionId}:
-     get:
+    get:
       security:
         - Bearer: []
       tags:
@@ -135,7 +135,7 @@ paths:
         required: true
         description: The unique identifier of the transaction.
       #produces:
-       # - application/json
+      # - application/json
       responses:
         '200':
           description: User transaction retrieved succesfully
@@ -145,45 +145,45 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-      put:
-        security:
-          - Bearer: []
-        tags:
-          - Transaction
-        summary: Update a transaction
-        description: API to update specific details of a transaction, such as its category or note.
-        parameters:
-          - in: path
-            name: transactionId
-            type: string
-            required: true
-            description: The unique id of the transaction to update.
-          - in: body
-            name: body
-            description: Fields to update for the transaction
-            required: true
-            schema:
-              type: object
-              properties:
-                category:
-                  type: string
-                  description: New category for the transaction
-                note:
-                  type: string
-                  description: Optional note of transaction
-        produces:
-          - application/json
-        responses:
-          '200':
-            description: Transaction updated successfully
-            schema:
-              $ref: '#/definitions/ApiResponse'
-          '400':
-            description: Invalid request body
-          '404':
-            description: Transaction not found
-          '500':
-            description: Internal server error
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - Transaction
+      summary: Update a transaction
+      description: API to update specific details of a transaction, such as its category or note.
+      parameters:
+        - in: path
+          name: transactionId
+          type: string
+          required: true
+          description: The unique id of the transaction to update.
+        - in: body
+          name: body
+          description: Fields to update for the transaction
+          required: true
+          schema:
+            type: object
+            properties:
+              category:
+                type: string
+                description: New category for the transaction
+              note:
+                type: string
+                description: Optional note of transaction
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction updated successfully
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid request body
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal server error
 securityDefinitions:
   Bearer:
     type: apiKey
